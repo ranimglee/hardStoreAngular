@@ -1,0 +1,193 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+          <div class="container">
+            <!-- Product Name -->
+            <div class="form-group row align-items-center">
+              <label for="nom" class="col-sm-3 col-form-label">Name Product</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  id="nom"
+                  formControlName="nom"
+                  class="form-control"
+                  placeholder="Enter Name Product"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="productForm.get('nom')?.invalid && productForm.get('nom')?.touched"
+                >
+                  Name Product is required
+                </small>
+              </div>
+            </div>
+
+            <!-- Unit Price -->
+            <div class="form-group row align-items-center">
+              <label for="prixUnitaire" class="col-sm-3 col-form-label">Unit Price</label>
+              <div class="col-sm-9">
+                <input
+                  type="number"
+                  id="prixUnitaire"
+                  formControlName="prixUnitaire"
+                  class="form-control"
+                  placeholder="Enter Price"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="productForm.get('prixUnitaire')?.invalid && productForm.get('prixUnitaire')?.touched"
+                >
+                  Price Product is required
+                </small>
+              </div>
+            </div>
+
+            <!-- Sale Price -->
+            <div class="form-group row align-items-center">
+              <label for="prixVente" class="col-sm-3 col-form-label">Sale Price</label>
+              <div class="col-sm-9">
+                <input
+                  type="number"
+                  id="prixVente"
+                  formControlName="prixVente"
+                  class="form-control"
+                  placeholder="Enter Sale Price"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="productForm.get('prixVente')?.invalid && productForm.get('prixVente')?.touched"
+                >
+                  Sale Price is required
+                </small>
+              </div>
+            </div>
+<!-- Seuil Minimal -->
+<div class="form-group row align-items-center">
+  <label for="seuilMinimal" class="col-sm-3 col-form-label">Seuil Minimal</label>
+  <div class="col-sm-9">
+    <input
+      type="number"
+      id="seuilMinimal"
+      formControlName="seuilMinimal"
+      class="form-control"
+      placeholder="Enter Minimum Threshold"
+    />
+    <small
+      class="text-danger"
+      *ngIf="productForm.get('seuilMinimal')?.invalid && productForm.get('seuilMinimal')?.touched"
+    >
+      Seuil Minimal is required
+    </small>
+  </div>
+</div>
+
+            <!-- Current Stock -->
+            <div class="form-group row align-items-center">
+              <label for="stockActuel" class="col-sm-3 col-form-label">Current Stock</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  id="stockActuel"
+                  formControlName="stockActuel"
+                  class="form-control"
+                  placeholder="Enter Stock Amount"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="productForm.get('stockActuel')?.invalid && productForm.get('stockActuel')?.touched"
+                >
+                  Stock is required
+                </small>
+              </div>
+            </div>
+
+            <!-- Category -->
+         <!-- Category -->
+<div class="form-group row align-items-center">
+  <label for="categorieProduit" class="col-sm-3 col-form-label">Category</label>
+  <div class="col-sm-9">
+    <select
+      id="categorieProduit"
+      class="form-control"
+      formControlName="categorieProduit"
+    >
+      <option value="" disabled selected>Select a Category</option>
+      <option *ngFor="let c of categorieOptions" [value]="c.id">{{ c.nom }}</option>
+    </select>
+    <small
+      class="text-danger"
+      *ngIf="productForm.get('categorieProduit')?.invalid && productForm.get('categorieProduit')?.touched"
+    >
+      Category is required
+    </small>
+  </div>
+</div>
+
+<!-- Supplier -->
+<div class="form-group row align-items-center">
+  <label for="fournisseur" class="col-sm-3 col-form-label">Supplier</label>
+  <div class="col-sm-9">
+    <select
+      id="fournisseur"
+      class="form-control"
+      formControlName="fournisseur"
+    >
+      <option value="" disabled selected>Select a Supplier</option>
+      <option *ngFor="let f of fournisseurOptions" [value]="f.id">{{ f.nom }}</option>
+    </select>
+    <small
+      class="text-danger"
+      *ngIf="productForm.get('fournisseur')?.invalid && productForm.get('fournisseur')?.touched"
+    >
+      Supplier name is required
+    </small>
+  </div>
+</div>
+
+
+
+            <!-- Product Image -->
+            <div class="form-group row align-items-center">
+              <label for="imageProduit" class="col-sm-3 col-form-label">Image Product</label>
+              <div class="col-sm-9">
+                <div class="upload-btn-wrapper">
+                  <button class="btn btn-secondary">Upload Photo</button>
+                  <input
+                    type="file"
+                    id="imageProduit"
+                    (change)="onFileSelected($event)"
+                  />
+                </div>
+                <div class="image-preview mt-2" *ngIf="imageUrl">
+                  <img
+                    [src]="imageUrl"
+                    alt="Uploaded Image"
+                    class="img-thumbnail"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-group row">
+              <div class="col-sm-9 offset-sm-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary mr-2"
+                  
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

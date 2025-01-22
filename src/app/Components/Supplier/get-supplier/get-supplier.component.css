@@ -1,0 +1,198 @@
+.container {
+  width: 100%;
+  height: 100vh; /* Take the full height of the viewport */
+  margin: 0;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: white; /* Set background to white */
+  display: flex;
+  flex-direction: column;
+}
+  /* Header Section */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.add-product-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-product-button:hover {
+  background-color: #0056b3;
+}
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  table {
+    width: 1200px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px 15px;
+  }
+  tr:hover {
+    background-color: #e6fffa; /* Light teal background */
+    transform: scale(1.02); /* Slightly scale the row */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  
+  th {
+    background-color: #f7fafc;
+    color: #4a5568;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  tr:hover {
+    background-color: #e6fffa; /* Light teal background on hover */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .ngb-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .ngb-pagination .page-item {
+    margin: 0 5px;
+  }
+  
+  .ngb-pagination .page-item.active .page-link {
+    background-color: #38b2ac;
+    border-color: #38b2ac;
+    color: white;
+  }
+  
+  .ngb-pagination .page-link {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    color: #4a5568;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .ngb-pagination .page-link:hover {
+    background-color: #38b2ac;
+    color: white;
+  }
+  
+  .ngb-pagination .page-item.disabled .page-link {
+    background-color: #e2e8f0;
+    color: #b0bec5;
+  }
+
+  /* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  max-width: 600px;
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.modal button.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.modal button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Empty Product Message */
+.no-products-message {
+  font-size: 1.2rem;
+  color: #888;
+  text-align: center;
+}
+
+/* Buttons (generic) */
+.btn {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}

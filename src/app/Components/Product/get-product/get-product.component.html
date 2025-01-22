@@ -1,0 +1,62 @@
+<div class="container">
+  <!-- Header Section -->
+  <div class="header-container">
+    <h1 class="header">Product List</h1>
+    <button class="btn btn-primary add-product-button" (click)="openAddProductModal()">Add Product</button>
+  </div>
+
+  <!-- Table of Products -->
+  <div *ngIf="products.length > 0; else noProducts">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Stock</th>
+          <th>Min Threshold</th>
+          <th>Unit Price (DT)</th>
+          <th>Sale Price (DT)</th>
+          <th>Category</th>
+          <th>Supplier</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of getCurrentPageProducts()">
+          <td>
+            <img [src]="getImageUrl(product)" alt="Product Image" *ngIf="product.image" class="product-image" />
+          </td>
+          <td>{{ product.codePr }}</td>
+          <td>{{ product.nom }}</td>
+          <td>{{ product.stockActuel }}</td>
+          <td>{{ product.seuilMinimal }}</td>
+          <td>{{ product.prixUnitaire }}</td>
+          <td>{{ product.prixVente }}</td>
+          <td>{{ product.categorieProduit?.nom }}</td>
+          <td>{{ product.fournisseur?.nom  }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noProducts>
+    <p>No products available. Please add one.</p>
+  </ng-template>
+
+
+
+  <!-- Add Product Modal -->
+  <div *ngIf="showAddProductModal" class="modal-overlay">
+    <div class="modal">
+      <h2>Add Product</h2>
+      <app-add-product (close)="closeAddProductModal()"></app-add-product>
+      <button class="btn btn-secondary" (click)="closeAddProductModal()">Close</button>
+    </div>
+  </div>
+
+ 
+</div>

@@ -1,0 +1,61 @@
+/* Make sure the body and HTML are set to take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Styling the calendar container to take the full page width and height */
+  .calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 1000px;
+    margin: 0; /* Remove any default margin */
+    overflow: hidden; /* Prevent any overflow */
+  }
+  
+  /* Optional: You can add custom styling for events or calendar */
+  .fc .fc-daygrid-day-number {
+    font-weight: bold;
+  }
+  
+  .fc .fc-daygrid-day {
+    cursor: pointer;
+  }
+  
+  .fc-daygrid-day.fc-day-today {
+    background-color: #ffeb3b;
+    font-weight: bold;
+  }
+  
+  .fc .fc-daygrid-day.fc-day-past {
+    background-color: #f1f1f1;
+  }
+  
+  .fc .fc-daygrid-day.fc-day-future {
+    background-color: #ffffff;
+  }
+  
+  /* Style for event popups (optional) */
+  .fc-event {
+    background-color: #2196f3;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  /* FullCalendar-specific style for responsive width and height */
+  .fc {
+    width: 100%; /* Ensure FullCalendar takes full width */
+    height: 100%; /* Ensure FullCalendar takes full height */
+  }
+  
+  /* Ensures the FullCalendar itself occupies full height inside the container */
+  .full-calendar {
+    width: 100%;
+    height: 100%;
+    display: block; /* Make sure it’s treated as a block element */
+  }
+  

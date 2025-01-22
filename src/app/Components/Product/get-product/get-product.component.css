@@ -1,0 +1,150 @@
+/* General container styling */
+.container {
+  width: 100%;
+  height: 100vh; /* Take the full height of the viewport */
+  margin: 0;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: white; /* Set background to white */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.add-product-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-product-button:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styling */
+.product-table {
+  width: 1200px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-table th,
+.product-table td {
+  padding: 15px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.product-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.product-table td {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.product-table tr:hover {
+  background-color: #e6fffa; /* Light teal background */
+    transform: scale(1.02); /* Slightly scale the row */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.product-table img.product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  max-width: 600px;
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.modal button.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.modal button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Empty Product Message */
+.no-products-message {
+  font-size: 1.2rem;
+  color: #888;
+  text-align: center;
+}
+
+/* Buttons (generic) */
+.btn {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}

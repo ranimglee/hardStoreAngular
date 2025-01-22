@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="header-container">
+      <h1 class="header">Suppliers List</h1>
+      <button class="btn btn-primary add-product-button" (click)="openAddSupplierModal()">Add Supplier</button>
+    </div>
+  
+  
+    <!-- Table displaying the suppliers -->
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-sm text-gray-600">
+          <th>Supplier Name</th>
+          <th>Phone</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let supplier of paginatedSuppliers; let i = index" class="transition-all hover:bg-teal-50">
+          <td>{{ supplier.nom }}</td>
+          <td>{{ supplier.telephone }}</td>
+          <td>{{ supplier.adresse }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+ <!-- Pagination -->
+ <ngb-pagination
+ [(page)]="currentPage"
+ [pageSize]="pageSize"
+ [collectionSize]="totalItems"
+ (pageChange)="onPageChange($event)"
+ aria-label="Pagination"
+ class="pagination-wrapper"
+></ngb-pagination>
+
+  <!-- Add Product Modal -->
+  <div *ngIf="showAddSupplierModal" class="modal-overlay">
+    <div class="modal">
+      <h2>Add Product</h2>
+      <app-add-supplier (close)="closeAddSupplierModal()"></app-add-supplier>
+      <button class="btn btn-secondary" (click)="closeAddSupplierModal()">Close</button>
+    </div>
+  </div>
+  </div>
+  

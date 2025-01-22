@@ -1,0 +1,88 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form [formGroup]="supplierForm" (ngSubmit)="addSupplier()">
+                    <div class="container">
+                        
+                        <!-- Supplier Name -->
+                        <div class="form-group row align-items-center">
+                            <label for="nom" class="col-sm-3 col-form-label">Name Supplier</label>
+                            <div class="col-sm-9">
+                                <input
+                                    type="text"
+                                    id="nom"
+                                    formControlName="nom"
+                                    class="form-control"
+                                    placeholder="Enter Name Supplier"
+                                />
+                                <small
+                                    class="text-danger"
+                                    *ngIf="supplierForm.get('nom')?.invalid && supplierForm.get('nom')?.touched"
+                                >
+                                    Name Supplier is required
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Supplier Phone Number -->
+                        <div class="form-group row align-items-center">
+                            <label for="telephone" class="col-sm-3 col-form-label">Phone Number</label>
+                            <div class="col-sm-9">
+                                <input
+                                    type="tel"
+                                    id="telephone"
+                                    formControlName="telephone"
+                                    class="form-control"
+                                    placeholder="Enter phone number (e.g., +123456789)"
+                                    pattern="^\+?[0-9]{10,15}$" 
+                                    maxlength="15" 
+                                    required
+                                />
+                                <small
+                                    class="text-danger"
+                                    *ngIf="supplierForm.get('telephone')?.invalid && supplierForm.get('telephone')?.touched"
+                                >
+                                    Please enter a valid phone number 
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Supplier Address -->
+                        <div class="form-group row align-items-center">
+                            <label for="adresse" class="col-sm-3 col-form-label">Address Supplier</label>
+                            <div class="col-sm-9">
+                                <input
+                                    type="text"
+                                    id="adresse"
+                                    formControlName="adresse"
+                                    class="form-control"
+                                    placeholder="Enter Address Supplier"
+                                />
+                                <small
+                                    class="text-danger"
+                                    *ngIf="supplierForm.get('adresse')?.invalid && supplierForm.get('adresse')?.touched"
+                                >
+                                    Address Supplier is required
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary mr-2"
+                                    [disabled]="supplierForm.invalid"
+                                >
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
